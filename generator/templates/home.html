@@ -1,0 +1,51 @@
+{% block content %}
+<html>
+    <head>
+        <title>Taylor Swift Lyric Generator</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <style>
+            img {
+                max-width: 75px;
+            }
+            .btn:hover, .btn:focus {
+                box-shadow: 0 0.5em 0.5em -0.4em rgb(216, 161, 169);
+                background-color: rgb(236, 203, 208);
+                transform: translateY(-0.25em);
+                outline-color: rgb(236, 203, 208);
+            }
+            button {
+                outline: none;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container mt-4 mx-auto" style="text-align: center;">
+            <h1>Taylor Swift Lyric Generator</h1>
+            <p><i>by Kira Wang and Juliana Lu</i></p>
+            <br><br>
+        </div>
+
+        <div class="container d-flex justify-content-center">
+            <form action="" method="POST" class="text-center">
+                {% csrf_token %}
+                <button onClick="window.location.reload();" type="submit" class="btn" name="evermore"><img src="https://upload.wikimedia.org/wikipedia/en/0/0a/Taylor_Swift_-_Evermore.png"><br> Evermore</button>
+                <button onClick="window.location.reload();" type="submit" class="btn" name="folklore"><img src="https://upload.wikimedia.org/wikipedia/en/f/f8/Taylor_Swift_-_Folklore.png"><br> Folklore</button>
+                <button onClick="window.location.reload();" type="submit" class="btn" name="lover"><img src="https://upload.wikimedia.org/wikipedia/en/c/cd/Taylor_Swift_-_Lover.png"><br> Lover</button>
+                <button onClick="window.location.reload();" type="submit" class="btn" name="reputation"><img src="https://upload.wikimedia.org/wikipedia/en/f/f2/Taylor_Swift_-_Reputation.png"><br> Reputation</button>
+                <button onClick="window.location.reload();" type="submit" class="btn" name="1989"><img src="https://upload.wikimedia.org/wikipedia/en/f/f6/Taylor_Swift_-_1989.png"><br>1989</button>
+                <button onClick="window.location.reload();" type="submit" class="btn" name="red"><img src="https://upload.wikimedia.org/wikipedia/en/e/e8/Taylor_Swift_-_Red.png"><br> Red</button>
+                <button onClick="window.location.reload();" type="submit" class="btn" name="speak_now"><img src="https://upload.wikimedia.org/wikipedia/en/8/8f/Taylor_Swift_-_Speak_Now_cover.png"><br> Speak Now</button>                
+                <button onClick="window.location.reload();" type="submit" class="btn" name="fearless"><img src="https://upload.wikimedia.org/wikipedia/en/8/86/Taylor_Swift_-_Fearless.png"><br> Fearless</button>
+                <button onClick="window.location.reload();" type="submit" class="btn" name="taylor_swift"><img src="https://upload.wikimedia.org/wikipedia/en/1/1f/Taylor_Swift_-_Taylor_Swift.png"><br> Taylor Swift</button><br><br>
+                <button onClick="window.location.reload();" type="submit" class="btn" name="all">All Songs</button>
+            </form>
+            <br><br>
+            <div class="card text-center">
+                <p>{{ lyric.content|linebreaks }}</p>
+            </div>
+        </div>
+        
+    </body>
+</html>
+{% endblock %}
