@@ -18,5 +18,5 @@ A Django framework website with a lyric generator app.
 Generates Taylor Swift lyrics given input from various albums.  
 Uses NLP given corpus of lyrics from album to generate fake lyrics, 
 utilizing probabilities from old Taylor Swift lyrics.  
-On the website, you can specify which of Taylor Swift's 10 albums you want to draw fake lyrics from (or if you want to draw fake lyrics from all of her lyrics).
+On the website, you can specify if you want to generate new lyrics from all songs, or one of her 10 albums.
 
